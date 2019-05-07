@@ -1,0 +1,32 @@
+[
+
+  {
+
+    "id": 1,
+
+    "greeting": "Fine",
+
+    "intro": "we are glad that you have chosen",
+
+    "room": "Your room number is",
+
+    "end": "so please call the staff if anything is needed. We hope you enjoy your stay"
+
+  },
+
+  {
+
+    "id": 2,
+
+    "greeting": "Good",
+
+    "intro": "and welcome to",
+
+    "room": "Room",
+
+    "end": "is now ready for you. Enjoy your stay, and let us know if anything is needed"
+
+
+  }
+
+]
