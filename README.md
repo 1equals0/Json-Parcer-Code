@@ -1,5 +1,3 @@
-Kipsu
-
 This python code will take two json files as inputs an one message as an output. The two json files provide guesta and company information, a
 staff member will select the company and the guest/s with id numbers. The staff memeber is also able to create custom messgae template using defined variables.
 The final result will be a messaaage customized by the user.
