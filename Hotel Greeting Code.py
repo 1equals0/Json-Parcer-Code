@@ -1,11 +1,12 @@
-#### This program will assume that the stff member knows the id of the company and the guests
+#### This program will assume that the user knows the ID of the company and the guests
 import json
 from pprint import pprint
 import sys
 from datetime import datetime
 import time
 
-##Parse company.json and identify company of interest
+
+##Parse companies.json and identify company of interest
 
 businessID = dict()
 
@@ -21,14 +22,14 @@ with open('Companies.json') as json_data:
 
 compMax = len(companies)
 compID = input("Please enter the company ID: ")
-if compID.isdigit() == False or int(compID) > compMax:
+if compID.isdigit() == False or int(compID) > compMax:  ## Make sure only integers are allowed
     while compID.isdigit() == False:    ## Both booleans and floats aren't accepted
         compID = input("Please enter the company ID as an integer: ")
-    while int(compID) > compMax:
+    while int(compID) > compMax:        ## There is a limited number of companies
         compID = input("That company ID doesn't exist, please enter another: ")
 compID = int(compID)
 
-## coi = (company of interest)
+## coi = (company of interest)      useful variables
 coiCompany = businessID[compID][0]
 coiCity = businessID[compID][1]
 coiTimezone = businessID[compID][2]
@@ -52,14 +53,14 @@ for guests in guestData:
     
 guestMax = len(guestData)
 inputID = input("Please enter the guest id: ")
-if inputID.isdigit() == False or int(inputID) > guestMax:
+if inputID.isdigit() == False or int(inputID) > guestMax:   ## Make sure only integers are allowed
     while inputID.isdigit() == False:    ## Both booleans and floats aren't accepted
         inputID = input("Please enter the guest ID as an integer: ")
-    while int(inputID) > guestMax:
+    while int(inputID) > guestMax:      ## There is a limited number of guests
         inputID = input("That guest ID doesn't exist, please enter another: ")
 inputID = int(inputID)
 
-## poi = (person of interest)
+## poi = (person of interest)      useful variables
 poiFirstname = personID[inputID][0]
 poiLastname = personID[inputID][1]
 poiRoom = personID[inputID][2]
@@ -89,19 +90,20 @@ if response == "Y":
 
     templateMax = len(messageData)
     inputID = input("Please enter the message ID: ")
-    if inputID.isdigit() == False or int(inputID) > templateMax:
+    if inputID.isdigit() == False or int(inputID) > templateMax:    ## Make sure only integers are allowed
         while inputID.isdigit() == False:    ## Both booleans and floats aren't accepted
             inputID = input("Please enter the message ID as an integer: ")
-        while int(inputID) > templateMax:
+        while int(inputID) > templateMax:       ## There is a limited number of templates
             inputID = input("That message ID doesn't exist, please enter another: ")
     inputID = int(inputID)
 
-    ## toi = (template of interest)
+    ## toi = (template of interest)      useful variables
     toiGreeting = templateID[inputID][0]
     toiIntro = templateID[inputID][1]
     toiRoom = templateID[inputID][2]
     toiEnd = templateID[inputID][3]
-    
+
+    ## Determine the time for correct greeting
     current = time.strftime("%H:%M:%S")
     hour = int(current[0:2])
     if hour > 19 or hour < 6:
