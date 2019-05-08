@@ -38,5 +38,5 @@ With more time, I would try the following things:
 3. I would try to clean up and simplify the code further
 4. I would try to make my program work for all type of json files used by the company
 
-Authors
+Authors:
 Aleksey Garbaly
